@@ -8,6 +8,6 @@
 import Foundation
 class Warrior: Character {
     init(name: String) {
-        super.init(name: name, healthPoints: 100, weapon: Weapon(name: "Épée", damage: 150))
+        super.init(name: name, healthPoints: 100, weapon: Weapon(name: "Sword", damage: 150))
     }
 }

@@ -20,11 +20,11 @@ class Team {
     // Méthode pour ajouter un membre à l'équipe
     func addMember() {
         print("Choisissez le type de personnage à ajouter à votre équipe:")
-        print("1. Warrior")
-        print("2. Magus")
-        print("3. Colossus")
-        print("4. Dwarf")
-        if let choice = readLine(), let choiceInt = Int(choice) {
+        // Affiche les options en utilisant l'énumération
+            for type in CharacterType.allCases {
+                print("\(type.rawValue). \(type.description)")
+            }
+        if let choice = readLine(), let choiceInt = Int(choice),let characterType = CharacterType(rawValue: choiceInt) {
             var name: String? = nil
             while name == nil {
                 print("Entrez le nom du personnage:")
@@ -40,17 +40,16 @@ class Team {
 
             var newCharacter: Character?  // Variable pour stocker le nouveau personnage
             // Crée un nouveau personnage en fonction du choix de l'utilisateur
-            switch choiceInt {
-            case 1:
+            switch characterType {
+            case .warrior:
                 newCharacter = Warrior(name: name!)
-            case 2:
+            case .magus:
                 newCharacter = Magus(name: name!)
-            case 3:
+            case .colossus:
                 newCharacter = Colossus(name: name!)
-            case 4:
+            case .dwarf:
                 newCharacter = Dwarf(name: name!)
-            default:
-                print("Choix invalide.")
+            
             }
 
             // Ajoute le nouveau personnage à l'équipe

@@ -10,7 +10,7 @@ import Foundation
 class Magus: Character {
     var healingPower: Int
     
-    init(name: String, weapon: Weapon = Weapon(name: "Staff", damage: 5)) {  // Ajout du paramètre 'weapon' avec une valeur par défaut
+    init(name: String, weapon: Weapon = Weapon(name: "Staff", damage: 10)) {  // Ajout du paramètre 'weapon' avec une valeur par défaut
         self.healingPower = 20 // Tu peux ajuster cette valeur
         super.init(name: name, healthPoints: 120, weapon: weapon)  // Passage de 'weapon' à 'super.init()'
     }

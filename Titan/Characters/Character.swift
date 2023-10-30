@@ -20,7 +20,7 @@ class Character {
     var healthPoints: Int
     var weapon: Weapon  // Ajout de la propriété 'weapon'
     
-    init(name: String, healthPoints: Int, weapon: Weapon) {  // Ajout du paramètre 'weapon'
+    init(name: String, healthPoints: Int, weapon: Weapon) {  
         self.name = name
         self.healthPoints = healthPoints
         self.weapon = weapon  // Initialisation de 'weapon'
@@ -30,7 +30,7 @@ class Character {
     }
     
     func attack(target: Character) {
-        target.healthPoints -= self.weapon.damage  // Utilisation de 'weapon.damage' au lieu de 'weaponDamage'
+        target.healthPoints -= self.weapon.damage  // Utilisation de 'weapon.damage'
         print("\(self.name) a infligé \(self.weapon.damage) points de dégâts à \(target.name) avec \(self.weapon.name).")
         print("Points de vie restants de \(target.name): \(target.healthPoints)")
     }

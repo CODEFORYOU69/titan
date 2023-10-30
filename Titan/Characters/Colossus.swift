@@ -9,6 +9,6 @@ import Foundation
 
 class Colossus: Character {
     init(name: String) {
-        super.init(name: name, healthPoints: 120, weapon: Weapon(name: "Masse", damage: 8))
+        super.init(name: name, healthPoints: 120, weapon: Weapon(name: "Mace", damage: 20))
     }
 }
