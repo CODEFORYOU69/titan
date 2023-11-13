@@ -11,13 +11,21 @@ class Character {
     var name: String {
         didSet {
             if Character.usedNames.contains(name) {
-                // Gérer le cas où le nom est déjà utilisé
+                print("Ce nom est déjà utilisé. Veuillez en choisir un autre.")
+                name = oldValue
             } else {
                 Character.usedNames.append(name) // Ajouter le nouveau nom à la liste
             }
         }
     }
-    var healthPoints: Int
+    var healthPoints: Int {
+        didSet {
+            if healthPoints < 0 {
+                healthPoints = 0  // Assurez-vous que les points de vie ne sont pas négatifs
+            }
+        }
+    }
+
     var weapon: Weapon  // Ajout de la propriété 'weapon'
     
     init(name: String, healthPoints: Int, weapon: Weapon) {  
@@ -30,7 +38,8 @@ class Character {
     }
     
     func attack(target: Character) {
-        target.healthPoints -= self.weapon.damage  // Utilisation de 'weapon.damage'
+        target.healthPoints -= self.weapon.damage // Utilisation de 'weapon.damage'
+        Game.totalDamage += weapon.damage
         print("\(self.name) a infligé \(self.weapon.damage) points de dégâts à \(target.name) avec \(self.weapon.name).")
         print("Points de vie restants de \(target.name): \(target.healthPoints)")
     }
