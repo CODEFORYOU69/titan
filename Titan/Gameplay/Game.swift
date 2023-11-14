@@ -11,7 +11,7 @@ import Foundation
 class Game {
     var team1: Team
     var team2: Team
-    var roundCount: Int = 0  // Compteur de tours
+    var roundCount: Int = 0
     static var totalDamage: Int = 0
     static var totalHealing: Int = 0
 
@@ -83,8 +83,8 @@ class Game {
     func displayStats() {
         print("Statistiques du jeu :")
         print("Nombre de tours : \(roundCount)")
-        print("Dégâts totaux infligés : \(Game.totalDamage)")// ne fonctionne pas
-        print("Soins totaux : \(Game.totalHealing)") // ne fonctionne pas
+        print("Dégâts totaux infligés : \(Game.totalDamage)")
+        print("Soins totaux : \(Game.totalHealing)")
     }
    
     func selectCharacter(from team: Team, with prompt: String, excluding characterToExclude: Character? = nil) -> Character {
