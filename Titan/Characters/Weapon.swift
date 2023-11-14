@@ -3,7 +3,6 @@
 //  Titan
 //
 //  Created by younes ouasmi on 23/10/2023.
-//TODO: migrer en struct 
 
 import Foundation
 class Weapon {
